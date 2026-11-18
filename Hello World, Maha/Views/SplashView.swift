@@ -1,15 +1,32 @@
-//
-//  SplashView.swift
-//  Hello World, Maha
-//
-//  Created by Maha Alhamdan on 30/05/1448 AH.
-//
-
 import SwiftUI
 
 struct SplashView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            // الخلفية: تدرّج من الأسود لرمادي الكروت
+            LinearGradient(
+                colors: [.appBackground, .surfaceCard],
+                startPoint: .top,
+                endPoint: .bottom
+            )
+            .ignoresSafeArea()
+
+            // المحتوى
+            VStack(spacing: 16) {
+                Image("SplashIcon")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 100)
+
+                Text("Journali")
+                    .font(.display)
+                    .foregroundStyle(Color.textPrimary)
+
+                Text("Your thoughts, your story")
+                    .font(.bodySupporting)
+                    .foregroundStyle(Color.textPrimary)
+            }
+        }
     }
 }
 

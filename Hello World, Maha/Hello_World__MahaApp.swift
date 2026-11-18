@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct Hello_World__MahaApp: App {
@@ -13,5 +14,6 @@ struct Hello_World__MahaApp: App {
         WindowGroup {
             ContentView()
         }
+        .modelContainer(for: Journal.self)
     }
 }
